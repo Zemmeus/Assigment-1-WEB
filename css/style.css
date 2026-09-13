@@ -1,0 +1,1140 @@
+/* ==========================================================================
+   EduSphere — Online Educational Platform
+   Team: The Ethernet  |  Assignment #1: HTML & CSS Basics
+   Shared external stylesheet linked by every page of the site.
+   No frameworks or UI libraries are used — every rule below is hand written.
+
+   TABLE OF CONTENTS
+   01. Design tokens (custom properties: colour palette + typography scale)
+   02. Global reset
+   03. ELEMENT selectors      (body, h1-h3, p, a, img, ul, ol, table, ...)
+   04. Layout containers      (.container, .section)
+   05. Site header & navigation (#main-header + descendant .nav-menu a)
+   06. Hero block             (#hero)
+   07. Buttons                (.btn and its variants)
+   08. Cards & grids          (.card, .card-grid, .feature-card, .team-card)
+   09. Lists                  (.step-list, .check-list)
+   10. Media & images         (.banner, .thumb, .profile-img — circular)
+   11. Tables                 (#pricing-table, #weekly-schedule)
+   12. Forms & UI components  (#contact-form, inputs, textarea, focus states)
+   13. Footer                 (#site-footer)
+   14. Small utility classes  (.highlight, .badge, .muted, ...)
+   15. Responsive rules       (media queries)
+   ========================================================================== */
+
+
+/* ==========================================================================
+   01. DESIGN TOKENS — one cohesive palette reused on all six pages
+   ========================================================================== */
+:root {
+  /* Colour palette */
+  --color-primary: #2f2a77;        /* deep indigo — headers, footer, nav   */
+  --color-primary-light: #5b54c9;  /* lighter indigo — links, hovers       */
+  --color-accent: #f2a33c;         /* warm amber — buttons, highlights     */
+  --color-accent-dark: #d4831a;    /* amber hover state                    */
+  --color-teal: #16a394;           /* secondary accent — badges, success   */
+
+  --color-page: #f7f7fb;           /* page background                      */
+  --color-surface: #ffffff;        /* card fill                            */
+  --color-surface-alt: #efeefc;    /* tinted section / card fill           */
+
+  --color-text: #1b1c3a;           /* main body text                       */
+  --color-text-muted: #5a5b78;     /* secondary text                       */
+  --color-border: #e2e2ef;         /* hairline borders                     */
+
+  /* Typography scale */
+  --font-body: "Segoe UI", Tahoma, Verdana, Geneva, sans-serif;
+  --font-heading: Georgia, "Times New Roman", "Palatino Linotype", serif;
+  --font-mono: Consolas, "Courier New", monospace;
+
+  /* Box model tokens */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-card: 0 6px 18px rgba(47, 42, 119, 0.10);
+  --shadow-card-hover: 0 12px 28px rgba(47, 42, 119, 0.18);
+  --gap: 1.5rem;
+}
+
+
+/* ==========================================================================
+   02. GLOBAL RESET — predictable box model and no default browser spacing
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* padding + border are included in width/height */
+}
+
+
+/* ==========================================================================
+   03. ELEMENT SELECTORS — global styling by tag name
+   ========================================================================== */
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-text);
+  background-color: var(--color-page);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  line-height: 1.25;
+  letter-spacing: 0.2px;
+}
+
+h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  max-width: 68ch; /* comfortable reading measure */
+  color: var(--color-text);
+}
+
+/* Links: default underline removed, custom colour + clear :hover effect */
+a {
+  color: var(--color-primary-light);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: color 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+
+a:hover {
+  color: var(--color-accent-dark);
+  border-bottom-color: var(--color-accent);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  margin-bottom: 1rem;
+  padding-left: 1.4rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+strong {
+  color: var(--color-primary);
+}
+
+blockquote {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--color-primary);
+  border-left: 5px solid var(--color-accent);
+  padding: 1rem 1.5rem;
+  background-color: var(--color-surface-alt);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin-bottom: 1.5rem;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background-color: var(--color-surface-alt);
+  color: var(--color-primary);
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-sm);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-surface);
+  font-size: 0.98rem;
+}
+
+th {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  text-align: left;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--color-primary);
+}
+
+td {
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+caption {
+  caption-side: bottom;
+  padding-top: 0.8rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  text-align: left;
+}
+
+
+/* ==========================================================================
+   04. LAYOUT CONTAINERS — width limits and vertical rhythm
+   ========================================================================== */
+.container {
+  width: 92%;              /* % unit  — fluid on small screens */
+  max-width: 1140px;       /* px unit — caps the line length    */
+  margin: 0 auto;          /* auto margins centre the container */
+}
+
+.section {
+  padding: 3.5rem 0;       /* rem unit — vertical box model spacing */
+}
+
+.section-alt {
+  background-color: var(--color-surface-alt);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section-head {
+  max-width: 760px;
+  margin-bottom: 2.25rem;
+}
+
+.section-head p {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+}
+
+/* Two column split used on About / Contact pages */
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  align-items: flex-start; /* both columns start at the same top line */
+}
+
+.split-center {
+  align-items: center;
+}
+
+.split > * {
+  flex: 1 1 320px; /* each column may shrink but never below 320px */
+}
+
+
+/* ==========================================================================
+   05. SITE HEADER & NAVIGATION
+       #main-header is an ID selector (one unique element per page),
+       .nav-menu a is a descendant selector (links inside the menu only).
+   ========================================================================== */
+#main-header {
+  background-color: var(--color-primary);
+  border-bottom: 4px solid var(--color-accent);
+  padding: 0.9rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+#main-header .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Brand block: logo image + site name */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: none;
+}
+
+.brand:hover {
+  border-bottom: none;
+}
+
+.brand-logo {
+  width: 46px;   /* images are sized from CSS, not from HTML attributes */
+  height: 46px;
+}
+
+.brand-name {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.brand-tagline {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+/* The navigation bar itself */
+.nav-menu ul {
+  list-style: none;      /* remove bullets from the menu */
+  display: flex;         /* flex alignment puts links in a row */
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  margin: 0;
+}
+
+/* DESCENDANT SELECTOR: only <a> elements inside .nav-menu */
+.nav-menu a {
+  display: inline-block;
+  padding: 0.55rem 1rem;    /* link spacing inside the bar */
+  border-radius: var(--radius-sm);
+  border-bottom: 3px solid transparent;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.nav-menu a:hover {
+  background-color: var(--color-primary-light);
+  color: #ffffff;
+  border-bottom-color: var(--color-accent);
+}
+
+/* The .active class marks the page that is currently open */
+.nav-menu a.active {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  border-bottom-color: #ffffff;
+}
+
+
+/* ==========================================================================
+   06. HERO BLOCK (#hero — unique element on the home page)
+   ========================================================================== */
+#hero {
+  background: linear-gradient(140deg, #efeefc 0%, #dedcf6 60%, #d6f1ec 100%);
+  border-bottom: 1px solid var(--color-border);
+  min-height: 72vh;        /* vh unit — hero fills most of the viewport */
+  display: flex;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+#hero .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.hero-text {
+  flex: 1 1 340px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+}
+
+.hero-art {
+  flex: 1 1 360px;
+}
+
+.hero-art img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+/* Same button row, but centred (used in the call-to-action sections) */
+.hero-actions.centered {
+  justify-content: center;
+}
+
+/* Statistics strip under the hero */
+.stats {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 2rem 0 0;
+}
+
+.stats li {
+  flex: 1 1 150px;
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--color-border);
+  border-left: 5px solid var(--color-teal);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.1rem;
+  margin: 0;
+}
+
+.stats strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  color: var(--color-primary);
+}
+
+.stats span {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+
+/* ==========================================================================
+   07. BUTTONS
+   ========================================================================== */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.7rem;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.25s ease,
+              color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  box-shadow: 0 6px 16px rgba(242, 163, 60, 0.35);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-dark);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-ghost:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-reset {
+  background-color: var(--color-surface-alt);
+  border-color: var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.btn-reset:hover {
+  background-color: var(--color-border);
+  color: var(--color-primary);
+}
+
+
+/* ==========================================================================
+   08. CARDS & GRIDS — reusable CLASS based components
+   ========================================================================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--gap);
+}
+
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 1.6rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* DESCENDANT SELECTORS inside a card */
+.card h3 {
+  color: var(--color-primary);
+}
+
+.card p {
+  color: var(--color-text-muted);
+  font-size: 0.97rem;
+  margin-bottom: 0.6rem;
+}
+
+.card ul {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+/* Feature card — icon on top, centred text */
+.feature-card {
+  text-align: center;
+  border-top: 5px solid var(--color-accent);
+}
+
+.feature-card img {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 1rem;
+}
+
+.feature-card p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Course card — image thumbnail + body */
+.course-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card .thumb {
+  width: 100%;
+  height: 180px;          /* fixed height keeps every card aligned */
+  object-fit: cover;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.course-card .card-body {
+  padding: 1.4rem 1.5rem 1.6rem;
+}
+
+/* Team / instructor profile card with a circular picture */
+.team-card {
+  text-align: center;
+}
+
+.team-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.2rem;
+}
+
+/* Every h3 that follows the first one is a sub-heading of the card,
+   so it is rendered smaller than the person's name. */
+.team-card h3 ~ h3 {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border);
+  margin-top: 1.2rem;
+  padding-top: 0.9rem;
+}
+
+.team-card .role {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--color-teal);
+  margin-bottom: 0.9rem;
+}
+
+.team-card ul,
+.team-card ol {
+  list-style-position: inside;
+  text-align: left;
+  padding-left: 0.2rem;
+}
+
+/* DESCENDANT SELECTOR: list items inside a team card only */
+.team-card ul li,
+.team-card ol li {
+  border-bottom: 1px dashed var(--color-border);
+  padding-bottom: 0.35rem;
+}
+
+
+/* ==========================================================================
+   09. LISTS — styled ordered and unordered lists
+   ========================================================================== */
+.step-list {
+  counter-reset: step;
+  list-style: none;
+  padding-left: 0;
+}
+
+.step-list li {
+  counter-increment: step;
+  position: relative;
+  padding: 0.6rem 0 0.6rem 3.2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.step-list li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-radius: 50%;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.check-list li {
+  padding-left: 1.9rem;
+  position: relative;
+}
+
+.check-list li::before {
+  content: "\2714";        /* check mark */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-teal);
+  font-weight: 700;
+}
+
+.plain-list {
+  list-style: square;
+  padding-left: 1.3rem;
+  color: var(--color-text-muted);
+}
+
+
+/* ==========================================================================
+   10. MEDIA & IMAGES — every image is sized from the stylesheet
+   ========================================================================== */
+.banner {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  margin-bottom: 2rem;
+}
+
+.figure {
+  margin-bottom: 1.5rem;
+}
+
+.figure img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.figure figcaption {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  padding-top: 0.6rem;
+}
+
+/* Circular profile picture — required by the assignment */
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;          /* makes the square picture a circle */
+  object-fit: cover;
+  border: 5px solid var(--color-accent);
+  box-shadow: var(--shadow-card);
+  margin: 0 auto 1rem;
+}
+
+.profile-img-lg {
+  width: 190px;
+  height: 190px;
+  border-color: var(--color-teal);
+}
+
+
+/* ==========================================================================
+   11. TABLES — shared styling plus two unique ID rules
+   ========================================================================== */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;            /* long tables scroll instead of breaking */
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  margin-bottom: 1.5rem;
+}
+
+/* DESCENDANT SELECTOR: cells inside a striped table */
+.table-striped tbody tr:nth-child(even) td {
+  background-color: var(--color-surface-alt);
+}
+
+.table-striped tbody tr:hover td {
+  background-color: #e6f6f3;
+}
+
+/* ID SELECTOR — pricing table on courses.html */
+#pricing-table th:first-child,
+#pricing-table td:first-child {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+#pricing-table .price {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--color-accent-dark);
+  white-space: nowrap;
+}
+
+/* ID SELECTOR — office hours table on instructors.html */
+#office-hours td:first-child {
+  font-weight: 700;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+#office-hours td:last-child {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+/* ID SELECTOR — weekly timetable on schedule.html */
+#weekly-schedule th {
+  text-align: center;
+}
+
+#weekly-schedule td {
+  text-align: center;
+  font-size: 0.92rem;
+}
+
+#weekly-schedule .time-col {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+#weekly-schedule .free-slot {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+
+/* ==========================================================================
+   12. FORMS & UI COMPONENTS (#contact-form)
+   ========================================================================== */
+#contact-form {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 6px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 2rem;
+  max-width: 640px;            /* px cap for readable form fields */
+}
+
+.form-row {
+  margin-bottom: 1.3rem;
+}
+
+/* DESCENDANT SELECTOR: labels that live inside the contact form */
+#contact-form label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 0.4rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-page);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.9rem;
+  transition: border-color 0.25s ease, background-color 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+/* Focus states make the active field obvious */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  background-color: #ffffff;
+  border-color: var(--color-primary-light);
+  box-shadow: 0 0 0 4px rgba(91, 84, 201, 0.18);
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+input[type="color"] {
+  width: 70px;
+  height: 44px;
+  padding: 4px;
+  background-color: var(--color-page);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+/* Radio and checkbox groups */
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* The ID is repeated here so that these pill labels win over the
+   more general "#contact-form label" rule above. */
+#contact-form .radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-page);
+  border: 2px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 0;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+#contact-form .radio-group label:hover {
+  border-color: var(--color-primary-light);
+  background-color: #ffffff;
+}
+
+.radio-group input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.inline-field {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.checkbox-row input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 0.35rem;
+  accent-color: var(--color-teal);
+  cursor: pointer;
+}
+
+#contact-form .checkbox-row label {
+  display: inline;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.form-hint {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin: 0.35rem 0 0;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.4rem;
+  margin-top: 1.6rem;
+}
+
+/* Contact details list next to the form */
+.contact-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.contact-list li {
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.7rem 0;
+}
+
+.contact-list strong {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-teal);
+}
+
+
+/* ==========================================================================
+   13. FOOTER (#site-footer) — repeated on every page with the team names
+   ========================================================================== */
+#site-footer {
+  background-color: var(--color-primary);
+  color: #d8d7ee;
+  border-top: 5px solid var(--color-accent);
+  padding: 2.5rem 0 1.5rem;
+  margin-top: 3rem;
+}
+
+#site-footer h3 {
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+#site-footer p {
+  color: #cfceea;
+  font-size: 0.94rem;
+}
+
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.footer-grid > div {
+  flex: 1 1 240px;
+}
+
+/* DESCENDANT SELECTOR: footer links only */
+#site-footer a {
+  color: var(--color-accent);
+}
+
+#site-footer a:hover {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+.team-credits {
+  list-style: none;
+  padding-left: 0;
+}
+
+.team-credits li {
+  border-left: 3px solid var(--color-accent);
+  padding-left: 0.7rem;
+  font-size: 0.94rem;
+}
+
+.team-credits span {
+  display: block;
+  font-size: 0.82rem;
+  color: #a9a8cf;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  margin-top: 2rem;
+  padding-top: 1.2rem;
+  text-align: center;
+  font-size: 0.88rem;
+}
+
+
+/* ==========================================================================
+   14. UTILITY CLASSES
+   ========================================================================== */
+.highlight {
+  background-color: #fdf0d8;
+  color: var(--color-primary);
+  font-weight: 700;
+  padding: 0.1rem 0.2rem;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0 0 2px #fdf0d8;
+}
+
+.badge {
+  display: inline-block;
+  background-color: var(--color-teal);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 0.7rem;
+}
+
+.badge-accent {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+.muted {
+  color: var(--color-text-muted);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-center p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.note {
+  background-color: var(--color-surface);
+  border: 1px dashed var(--color-primary-light);
+  border-radius: var(--radius-md);
+  padding: 1.2rem 1.4rem;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  position: static;
+  display: inline-block;
+  margin: 0.5rem;
+}
+
+
+/* ==========================================================================
+   15. RESPONSIVE RULES
+   ========================================================================== */
+@media (max-width: 900px) {
+  #main-header .container {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav-menu ul {
+    justify-content: center;
+  }
+
+  #hero {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  h1,
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .section {
+    padding: 2.5rem 0;
+  }
+
+  .banner {
+    height: 170px;
+  }
+
+  #contact-form {
+    padding: 1.3rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

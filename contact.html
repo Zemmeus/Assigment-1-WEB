@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =====================================================================
+       Project : EduSphere — Online Educational Platform
+       Team    : The Ethernet (Group SE-2510)
+       Members : Ramil Zhunussov, Maxim Batyushkin, Azamat Mustafin
+       Page    : contact.html — Registration / contact form
+       Author  : Azamat Mustafin
+       Course  : Front-End Development — Assignment #1 (HTML & CSS Basics)
+       Note    : All styling comes from the shared external file css/style.css
+       ===================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Register for an EduSphere course or ask a question using our contact form. Campus address, phone numbers and answers to frequent questions.">
+  <meta name="author" content="The Ethernet">
+  <title>Contact &amp; Registration — EduSphere</title>
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============================ SITE HEADER ========================== -->
+  <header id="main-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="images/logo.svg" alt="EduSphere logo: a graduation cap inside a circle">
+        <span class="brand-name">
+          EduSphere
+          <span class="brand-tagline">Learn · Practise · Grow</span>
+        </span>
+      </a>
+
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="instructors.html">Instructors</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a class="active" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="section">
+      <div class="container">
+        <img class="banner" src="images/banner-contact.svg" alt="Envelope, chat bubbles and a support headset representing contact options">
+
+        <div class="section-head">
+          <h1>Registration &amp; contact</h1>
+          <p>
+            Fill in the form below to reserve a place in the next cohort or just
+            to ask a question. A mentor replies within one working day between
+            <span class="highlight">09:00 and 18:00</span>, Monday to Friday.
+          </p>
+        </div>
+
+        <div class="split">
+
+          <!-- ========================= THE FORM ======================== -->
+          <form id="contact-form" action="#" method="post">
+            <h2>Course registration</h2>
+            <p class="muted">Fields marked with * are required.</p>
+
+            <!-- Text input -->
+            <div class="form-row">
+              <label for="full-name">Full name *</label>
+              <input type="text" id="full-name" name="full-name"
+                     placeholder="Aisulu Amangeldy" required minlength="3">
+            </div>
+
+            <!-- Email input -->
+            <div class="form-row">
+              <label for="email">Email address *</label>
+              <input type="email" id="email" name="email"
+                     placeholder="student@example.com" required>
+              <p class="form-hint">We send the group invitation to this address.</p>
+            </div>
+
+            <!-- Telephone input -->
+            <div class="form-row">
+              <label for="phone">Phone number</label>
+              <input type="tel" id="phone" name="phone"
+                     placeholder="+7 (700) 000-00-00">
+            </div>
+
+            <!-- Dropdown (select) -->
+            <div class="form-row">
+              <label for="course">Course you are interested in *</label>
+              <select id="course" name="course" required>
+                <option value="">— Please choose a course —</option>
+                <option value="html-css">HTML &amp; CSS Foundations</option>
+                <option value="javascript">JavaScript in Practice</option>
+                <option value="python">Python for Everyone</option>
+                <option value="sql">Data Analytics with SQL</option>
+                <option value="ux">UX &amp; UI Design Basics</option>
+                <option value="mobile">Mobile Development</option>
+                <option value="instructor">Becoming an instructor</option>
+              </select>
+            </div>
+
+            <!-- Radio options -->
+            <div class="form-row">
+              <label>Preferred study format *</label>
+              <div class="radio-group">
+                <label for="format-evening">
+                  <input type="radio" id="format-evening" name="format"
+                         value="evening" checked>
+                  Evening (18:00 / 20:00)
+                </label>
+                <label for="format-weekend">
+                  <input type="radio" id="format-weekend" name="format"
+                         value="weekend">
+                  Weekend (Saturday)
+                </label>
+                <label for="format-intensive">
+                  <input type="radio" id="format-intensive" name="format"
+                         value="intensive">
+                  Intensive (daytime)
+                </label>
+              </div>
+            </div>
+
+            <!-- Colour selection -->
+            <div class="form-row">
+              <label for="theme-color">Accent colour for your student profile</label>
+              <div class="inline-field">
+                <input type="color" id="theme-color" name="theme-color" value="#2f2a77">
+                <span class="muted">Pick the colour of your personal dashboard.</span>
+              </div>
+            </div>
+
+            <!-- Textarea -->
+            <div class="form-row">
+              <label for="message">Your message *</label>
+              <textarea id="message" name="message" rows="6"
+                        placeholder="Tell us about your current level and what you want to achieve..."
+                        required></textarea>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="form-row checkbox-row">
+              <input type="checkbox" id="newsletter" name="newsletter" value="yes" checked>
+              <label for="newsletter">
+                Send me the weekly newsletter with free open lectures.
+              </label>
+            </div>
+
+            <!-- Buttons -->
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Send application</button>
+              <button type="reset" class="btn btn-reset">Clear the form</button>
+            </div>
+          </form>
+
+          <!-- ===================== CONTACT DETAILS ===================== -->
+          <div>
+            <h2>Other ways to reach us</h2>
+            <ul class="contact-list">
+              <li>
+                <strong>Campus</strong>
+                Mangilik El avenue 55/11, block C1, room 305, Astana
+              </li>
+              <li>
+                <strong>Phone</strong>
+                <a href="tel:+77001234567">+7 (700) 123-45-67</a>
+              </li>
+              <li>
+                <strong>Email</strong>
+                <a href="mailto:hello@edusphere.kz">hello@edusphere.kz</a>
+              </li>
+              <li>
+                <strong>Working hours</strong>
+                Monday &ndash; Friday, 09:00 &ndash; 18:00 (UTC+5)
+              </li>
+              <li>
+                <strong>Student support</strong>
+                Written code review in the group chat, every working day
+              </li>
+            </ul>
+
+            <h3>What happens after you send the form</h3>
+            <ol class="step-list">
+              <li>You receive an automatic confirmation email.</li>
+              <li>A mentor calls you to agree on the interview time.</li>
+              <li>After the interview we reserve your place for 48 hours.</li>
+              <li>You pay the first month and join the group chat.</li>
+            </ol>
+
+            <div class="note">
+              <h3>Frequent questions</h3>
+              <ul class="plain-list">
+                <li><strong>Can I change the format later?</strong> Yes, once per module.</li>
+                <li><strong>Is there a trial class?</strong> The first live class of every course is free.</li>
+                <li><strong>Do you issue documents for employers?</strong> Yes, a certificate with a verification link.</li>
+              </ul>
+              <p class="muted">
+                Anything else &mdash; ask in the message field or read the
+                <a href="courses.html">course catalogue</a> first.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ SITE FOOTER ========================== -->
+  <footer id="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>EduSphere</h3>
+          <p>
+            A demo educational platform built for Assignment #1 of the
+            Front-End Development course using only hand-written HTML and CSS.
+          </p>
+        </div>
+
+        <div>
+          <h3>The Ethernet — Group SE-2510</h3>
+          <ul class="team-credits">
+            <li>Ramil Zhunussov <span>Home page &amp; Courses catalogue</span></li>
+            <li>Maxim Batyushkin <span>About Us &amp; Instructors pages</span></li>
+            <li>Azamat Mustafin <span>Schedule &amp; Contact pages</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Site map</h3>
+          <ul class="plain-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="instructors.html">Instructors</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="footer-bottom">
+        &copy; 2026 EduSphere · Astana IT University · Created by Ramil Zhunussov,
+        Maxim Batyushkin and Azamat Mustafin.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

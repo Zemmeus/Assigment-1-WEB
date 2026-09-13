@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =====================================================================
+       Project : EduSphere — Online Educational Platform
+       Team    : The Ethernet (Group SE-2510)
+       Members : Ramil Zhunussov, Maxim Batyushkin, Azamat Mustafin
+       Page    : about.html — About the platform and the team members
+       Author  : Maxim Batyushkin
+       Course  : Front-End Development — Assignment #1 (HTML & CSS Basics)
+       Note    : All styling comes from the shared external file css/style.css
+       ===================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The story behind EduSphere, our teaching principles and biographies of the three students of team The Ethernet who built the website.">
+  <meta name="author" content="The Ethernet">
+  <title>About Us — EduSphere</title>
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============================ SITE HEADER ========================== -->
+  <header id="main-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="images/logo.svg" alt="EduSphere logo: a graduation cap inside a circle">
+        <span class="brand-name">
+          EduSphere
+          <span class="brand-tagline">Learn · Practise · Grow</span>
+        </span>
+      </a>
+
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="instructors.html">Instructors</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a class="active" href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="section">
+      <div class="container">
+        <img class="banner" src="images/banner-about.svg" alt="Three students collaborating around a shared screen in a study room">
+
+        <div class="section-head">
+          <h1>About EduSphere</h1>
+          <p>
+            EduSphere started as a study project of three second-year students at
+            Astana IT University. We were tired of courses that end with a
+            certificate and no portfolio, so we designed the platform we wanted
+            to study on ourselves.
+          </p>
+        </div>
+
+        <div class="split">
+          <div>
+            <h2>Our mission</h2>
+            <h3>Make practice the centre of the course, not a bonus</h3>
+            <p>
+              On most platforms a student watches for ten hours and writes code
+              for one. We invert that ratio. Each EduSphere module contains one
+              short theory block and three practical tasks, and no one moves on
+              until the mentor has accepted the work.
+            </p>
+            <p>
+              Everything you see on this site is written by hand: six HTML pages
+              and one external stylesheet, with no Bootstrap, no Tailwind and no
+              UI library of any kind.
+            </p>
+
+            <h3>Principles we teach by</h3>
+            <ul class="check-list">
+              <li>Structure before decoration — content first, CSS second</li>
+              <li>Small tasks with fast feedback beat long lectures</li>
+              <li>Every student presents work out loud at least once a module</li>
+              <li>Accessibility and semantics are part of the grade, not extras</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2>Our story</h2>
+            <h3>From an idea to a published website</h3>
+            <!-- ORDERED LIST: a timeline has a strict sequence -->
+            <ol class="step-list">
+              <li><strong>March 2025</strong> — the three of us meet in a university web technologies elective.</li>
+              <li><strong>June 2025</strong> — we run a free two-week HTML workshop for 30 school students.</li>
+              <li><strong>January 2026</strong> — the first paid cohort of 18 students starts.</li>
+              <li><strong>September 2026</strong> — the EduSphere website is published on GitHub Pages.</li>
+            </ol>
+
+            <blockquote>
+              We do not want students to finish a course. We want them to finish
+              a project.
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT THE TEAM MEMBERS ===================== -->
+    <section class="section section-alt" id="team">
+      <div class="container">
+        <div class="section-head text-center">
+          <h2>About the Team Members</h2>
+          <p>
+            Team <strong>The Ethernet</strong>, group SE-2510. Each member designed
+            and styled two pages of this website.
+          </p>
+        </div>
+
+        <div class="card-grid">
+
+          <article class="card team-card">
+            <img class="profile-img" src="images/avatar-member-1.svg" alt="Portrait of Ramil Zhunussov, team member and front-end developer">
+            <h3>Ramil Zhunussov</h3>
+            <span class="role">Team lead · Front-end</span>
+            <p>
+              Second-year software engineering student. Built the home page and
+              the course catalogue, and set up the shared colour palette and
+              typography scale that the whole site reuses.
+            </p>
+            <h3>Pages created</h3>
+            <ul>
+              <li><a href="index.html">index.html — Home</a></li>
+              <li><a href="courses.html">courses.html — Courses &amp; Pricing</a></li>
+            </ul>
+            <h3>Hobbies</h3>
+            <ul class="plain-list">
+              <li>Competitive programming</li>
+              <li>Basketball</li>
+              <li>Collecting mechanical keyboards</li>
+            </ul>
+          </article>
+
+          <article class="card team-card">
+            <img class="profile-img" src="images/avatar-member-2.svg" alt="Portrait of Maxim Batyushkin, team member and content designer">
+            <h3>Maxim Batyushkin</h3>
+            <span class="role">Content &amp; layout</span>
+            <p>
+              Responsible for everything about the team and the teaching staff.
+              Wrote the biographies, structured the instructor profiles and
+              styled the circular profile pictures used across the site.
+            </p>
+            <h3>Pages created</h3>
+            <ul>
+              <li><a href="about.html">about.html — About Us</a></li>
+              <li><a href="instructors.html">instructors.html — Instructors</a></li>
+            </ul>
+            <h3>Hobbies</h3>
+            <ul class="plain-list">
+              <li>Photography</li>
+              <li>Chess</li>
+              <li>Writing short technical articles</li>
+            </ul>
+          </article>
+
+          <article class="card team-card">
+            <img class="profile-img" src="images/avatar-member-3.svg" alt="Portrait of Azamat Mustafin, team member responsible for tables and forms">
+            <h3>Azamat Mustafin</h3>
+            <span class="role">Tables &amp; forms</span>
+            <p>
+              Handled the data-heavy part of the project: the weekly timetable
+              table and the registration form with all of its input types, focus
+              states and validation attributes.
+            </p>
+            <h3>Pages created</h3>
+            <ul>
+              <li><a href="schedule.html">schedule.html — Schedule</a></li>
+              <li><a href="contact.html">contact.html — Contact</a></li>
+            </ul>
+            <h3>Hobbies</h3>
+            <ul class="plain-list">
+              <li>Volleyball</li>
+              <li>Graphic design</li>
+              <li>Volunteering at IT olympiads</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== WHO WE WORK WITH ========================= -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Who studies with us</h2>
+          <p>Three groups of students, three different reasons to enrol.</p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <span class="badge">School students</span>
+            <h3>Grades 9&ndash;11</h3>
+            <p>
+              Preparing for university entrance exams and looking for a first
+              real project to put in an application portfolio.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="badge">University students</span>
+            <h3>First and second year</h3>
+            <p>
+              Filling the gaps between semesters — most often JavaScript, SQL and
+              version control with Git.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="badge">Career switchers</span>
+            <h3>Adults changing profession</h3>
+            <p>
+              Studying in the evening group after work, usually aiming for a
+              junior front-end or analyst position within a year.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ SITE FOOTER ========================== -->
+  <footer id="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>EduSphere</h3>
+          <p>
+            A demo educational platform built for Assignment #1 of the
+            Front-End Development course using only hand-written HTML and CSS.
+          </p>
+        </div>
+
+        <div>
+          <h3>The Ethernet — Group SE-2510</h3>
+          <ul class="team-credits">
+            <li>Ramil Zhunussov <span>Home page &amp; Courses catalogue</span></li>
+            <li>Maxim Batyushkin <span>About Us &amp; Instructors pages</span></li>
+            <li>Azamat Mustafin <span>Schedule &amp; Contact pages</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Site map</h3>
+          <ul class="plain-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="instructors.html">Instructors</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="footer-bottom">
+        &copy; 2026 EduSphere · Astana IT University · Created by Ramil Zhunussov,
+        Maxim Batyushkin and Azamat Mustafin.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

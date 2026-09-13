@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =====================================================================
+       Project : EduSphere — Online Educational Platform
+       Team    : The Ethernet (Group SE-2510)
+       Members : Ramil Zhunussov, Maxim Batyushkin, Azamat Mustafin
+       Page    : courses.html — Course catalogue and pricing
+       Author  : Ramil Zhunussov
+       Course  : Front-End Development — Assignment #1 (HTML & CSS Basics)
+       Note    : All styling comes from the shared external file css/style.css
+       ===================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Full catalogue of EduSphere courses in web development, programming, data and design, with a comparison of subscription plans.">
+  <meta name="author" content="The Ethernet">
+  <title>Courses &amp; Pricing — EduSphere</title>
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============================ SITE HEADER ========================== -->
+  <header id="main-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="images/logo.svg" alt="EduSphere logo: a graduation cap inside a circle">
+        <span class="brand-name">
+          EduSphere
+          <span class="brand-tagline">Learn · Practise · Grow</span>
+        </span>
+      </a>
+
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="courses.html">Courses</a></li>
+          <li><a href="instructors.html">Instructors</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="section">
+      <div class="container">
+        <img class="banner" src="images/banner-courses.svg" alt="Banner with a stack of books, code brackets and a graduation cap">
+
+        <div class="section-head">
+          <h1>Course catalogue</h1>
+          <p>
+            Six flagship courses across four directions. Every course is
+            project-based: you finish it with something you can actually show to
+            an employer, not just a list of watched videos.
+          </p>
+        </div>
+
+        <!-- =========================== COURSE CARDS ==================== -->
+        <div class="card-grid">
+
+          <article class="card course-card">
+            <img class="thumb" src="images/course-web.svg" alt="Browser window representing the HTML and CSS foundations course">
+            <div class="card-body">
+              <span class="badge">Beginner · 8 weeks</span>
+              <h3>HTML &amp; CSS Foundations</h3>
+              <p>
+                The course this website was built with. You learn document
+                structure first and visual design second.
+              </p>
+              <h3>What you will learn</h3>
+              <ul class="check-list">
+                <li>Semantic tags, tables, forms and accessibility basics</li>
+                <li>External stylesheets and all four selector types</li>
+                <li>The box model, flexbox and responsive layouts</li>
+                <li>Publishing a site to GitHub Pages</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card course-card">
+            <img class="thumb" src="images/course-js.svg" alt="Code editor showing a JavaScript function">
+            <div class="card-body">
+              <span class="badge">Intermediate · 10 weeks</span>
+              <h3>JavaScript in Practice</h3>
+              <p>
+                From variables to a working single-page application, written
+                without any framework.
+              </p>
+              <h3>What you will learn</h3>
+              <ul class="check-list">
+                <li>Types, functions, arrays and objects</li>
+                <li>DOM manipulation and event handling</li>
+                <li>Asynchronous code, fetch and REST APIs</li>
+                <li>Debugging in Chrome DevTools</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card course-card">
+            <img class="thumb" src="images/course-python.svg" alt="Terminal window running a Python script">
+            <div class="card-body">
+              <span class="badge">Beginner · 9 weeks</span>
+              <h3>Python for Everyone</h3>
+              <p>
+                A first programming language chosen because the syntax stays out
+                of the way while you learn to think in algorithms.
+              </p>
+              <h3>What you will learn</h3>
+              <ul class="check-list">
+                <li>Control flow, collections and functions</li>
+                <li>Files, modules and virtual environments</li>
+                <li>Automating boring tasks with scripts</li>
+                <li>An introduction to object-oriented design</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card course-card">
+            <img class="thumb" src="images/course-data.svg" alt="Dashboard with bar and pie charts representing data analytics">
+            <div class="card-body">
+              <span class="badge">Intermediate · 12 weeks</span>
+              <h3>Data Analytics with SQL</h3>
+              <p>
+                Turn a raw database into a dashboard a manager can read in
+                thirty seconds.
+              </p>
+              <h3>What you will learn</h3>
+              <ul class="check-list">
+                <li>SELECT, JOIN, GROUP BY and window functions</li>
+                <li>Cleaning messy real-world datasets</li>
+                <li>Charts that do not mislead the reader</li>
+                <li>Presenting findings to a non-technical audience</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card course-card">
+            <img class="thumb" src="images/course-ux.svg" alt="Wireframe screens and colour swatches representing UX design">
+            <div class="card-body">
+              <span class="badge">Beginner · 7 weeks</span>
+              <h3>UX &amp; UI Design Basics</h3>
+              <p>
+                Research, wireframes and design systems — the part of the work
+                that happens before anyone writes code.
+              </p>
+              <h3>What you will learn</h3>
+              <ul class="check-list">
+                <li>User interviews and simple usability tests</li>
+                <li>Wireframing and prototyping in Figma</li>
+                <li>Colour, type scales and spacing systems</li>
+                <li>Handing a design over to developers</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card course-card">
+            <img class="thumb" src="images/course-mobile.svg" alt="Smartphone showing a mobile application interface">
+            <div class="card-body">
+              <span class="badge">Advanced · 14 weeks</span>
+              <h3>Mobile Development</h3>
+              <p>
+                Build, test and publish a cross-platform application to a real
+                app store before the course ends.
+              </p>
+              <h3>What you will learn</h3>
+              <ul class="check-list">
+                <li>Component-based mobile interfaces</li>
+                <li>Navigation, local storage and device APIs</li>
+                <li>Working with a remote backend</li>
+                <li>Release builds and store requirements</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== PRICING TABLE ======================== -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Subscription plans</h2>
+          <p>
+            One price per month, cancel whenever you like. Students of Astana IT
+            University get an extra <span class="highlight">20% discount</span>
+            with a valid student card.
+          </p>
+        </div>
+
+        <div class="table-wrap">
+          <table id="pricing-table" class="table-striped">
+            <caption>Table 1. Comparison of the three EduSphere subscription plans.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Plan</th>
+                <th scope="col">Price per month</th>
+                <th scope="col">Courses included</th>
+                <th scope="col">Mentor support</th>
+                <th scope="col">Certificate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Starter</td>
+                <td class="price">12 000 &#8376;</td>
+                <td>1 course of your choice</td>
+                <td>Group chat only</td>
+                <td>Yes, after the final project</td>
+              </tr>
+              <tr>
+                <td>Standard</td>
+                <td class="price">19 000 &#8376;</td>
+                <td>3 courses in one direction</td>
+                <td>Weekly code review</td>
+                <td>Yes, for every course</td>
+              </tr>
+              <tr>
+                <td>Pro</td>
+                <td class="price">27 000 &#8376;</td>
+                <td>All 24 courses</td>
+                <td>Code review + 1-to-1 calls</td>
+                <td>Yes, plus career consultation</td>
+              </tr>
+              <tr>
+                <td>Team (5+ people)</td>
+                <td class="price">15 000 &#8376;</td>
+                <td>All 24 courses</td>
+                <td>Shared mentor for the group</td>
+                <td>Yes, for every member</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          <h3>Not sure which plan to take?</h3>
+          <p class="muted">
+            Start with <strong>Starter</strong>, finish one module and upgrade
+            later — the money you already paid is counted towards the new plan.
+            Write to us through the <a href="contact.html">contact form</a> and a
+            mentor will help you choose.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== ENROLMENT STEPS ======================== -->
+    <section class="section">
+      <div class="container">
+        <div class="split">
+          <div>
+            <h2>How to enrol</h2>
+            <ol class="step-list">
+              <li>Pick a course from the catalogue above.</li>
+              <li>Send the registration form with your preferred study format.</li>
+              <li>Take a 20-minute online interview with a mentor.</li>
+              <li>Pay for the first month and receive your group invitation.</li>
+            </ol>
+          </div>
+
+          <div>
+            <h2>Requirements</h2>
+            <h3>What you need before the first class</h3>
+            <ul class="plain-list">
+              <li>A laptop with 8 GB of RAM or more</li>
+              <li>A stable internet connection for live classes</li>
+              <li>An installed code editor such as VS Code</li>
+              <li>Around 8 free hours per week for practice</li>
+            </ul>
+            <p>
+              No previous programming experience is required for the courses
+              marked <span class="badge">Beginner</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ SITE FOOTER ========================== -->
+  <footer id="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>EduSphere</h3>
+          <p>
+            A demo educational platform built for Assignment #1 of the
+            Front-End Development course using only hand-written HTML and CSS.
+          </p>
+        </div>
+
+        <div>
+          <h3>The Ethernet — Group SE-2510</h3>
+          <ul class="team-credits">
+            <li>Ramil Zhunussov <span>Home page &amp; Courses catalogue</span></li>
+            <li>Maxim Batyushkin <span>About Us &amp; Instructors pages</span></li>
+            <li>Azamat Mustafin <span>Schedule &amp; Contact pages</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Site map</h3>
+          <ul class="plain-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="instructors.html">Instructors</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="footer-bottom">
+        &copy; 2026 EduSphere · Astana IT University · Created by Ramil Zhunussov,
+        Maxim Batyushkin and Azamat Mustafin.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

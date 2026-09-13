@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =====================================================================
+       Project : EduSphere — Online Educational Platform
+       Team    : The Ethernet (Group SE-2510)
+       Members : Ramil Zhunussov, Maxim Batyushkin, Azamat Mustafin
+       Page    : schedule.html — Weekly timetable of live classes
+       Author  : Azamat Mustafin
+       Course  : Front-End Development — Assignment #1 (HTML & CSS Basics)
+       Note    : All styling comes from the shared external file css/style.css
+       ===================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Weekly timetable of EduSphere live classes for the autumn semester, including group formats and instructions for joining a lesson.">
+  <meta name="author" content="The Ethernet">
+  <title>Class Schedule — EduSphere</title>
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============================ SITE HEADER ========================== -->
+  <header id="main-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="images/logo.svg" alt="EduSphere logo: a graduation cap inside a circle">
+        <span class="brand-name">
+          EduSphere
+          <span class="brand-tagline">Learn · Practise · Grow</span>
+        </span>
+      </a>
+
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="instructors.html">Instructors</a></li>
+          <li><a class="active" href="schedule.html">Schedule</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="section">
+      <div class="container">
+        <img class="banner" src="images/banner-schedule.svg" alt="Weekly calendar grid next to a clock showing live class times">
+
+        <div class="section-head">
+          <h1>Weekly class schedule</h1>
+          <p>
+            Autumn semester 2026, valid from <strong>29 September</strong>. All
+            times are shown for Astana (UTC+5). Live sessions last 90 minutes and
+            are recorded, so a missed class is never a lost class.
+          </p>
+        </div>
+
+        <!-- ========================= MAIN TIMETABLE ==================== -->
+        <div class="table-wrap">
+          <table id="weekly-schedule" class="table-striped">
+            <caption>Table 3. Live class timetable for all four study directions.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Time</th>
+                <th scope="col">Monday</th>
+                <th scope="col">Tuesday</th>
+                <th scope="col">Wednesday</th>
+                <th scope="col">Thursday</th>
+                <th scope="col">Friday</th>
+                <th scope="col">Saturday</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="time-col" scope="row">10:00 &ndash; 11:30</th>
+                <td class="free-slot">&mdash;</td>
+                <td class="free-slot">&mdash;</td>
+                <td class="free-slot">&mdash;</td>
+                <td class="free-slot">&mdash;</td>
+                <td class="free-slot">&mdash;</td>
+                <td>Python for Everyone<br><span class="muted">Intensive group</span></td>
+              </tr>
+              <tr>
+                <th class="time-col" scope="row">12:00 &ndash; 13:30</th>
+                <td class="free-slot">&mdash;</td>
+                <td class="free-slot">&mdash;</td>
+                <td class="free-slot">&mdash;</td>
+                <td class="free-slot">&mdash;</td>
+                <td class="free-slot">&mdash;</td>
+                <td>UX &amp; UI Design Basics<br><span class="muted">Weekend group</span></td>
+              </tr>
+              <tr>
+                <th class="time-col" scope="row">15:00 &ndash; 16:30</th>
+                <td>Mobile Development<br><span class="muted">Advanced group</span></td>
+                <td class="free-slot">Self-study</td>
+                <td>Mobile Development<br><span class="muted">Advanced group</span></td>
+                <td class="free-slot">Self-study</td>
+                <td>Project workshop<br><span class="muted">All directions</span></td>
+                <td class="free-slot">&mdash;</td>
+              </tr>
+              <tr>
+                <th class="time-col" scope="row">18:00 &ndash; 19:30</th>
+                <td>HTML &amp; CSS Foundations<br><span class="muted">Evening group A</span></td>
+                <td>JavaScript in Practice<br><span class="muted">Evening group</span></td>
+                <td>HTML &amp; CSS Foundations<br><span class="muted">Evening group A</span></td>
+                <td>JavaScript in Practice<br><span class="muted">Evening group</span></td>
+                <td class="free-slot">Consultations</td>
+                <td class="free-slot">&mdash;</td>
+              </tr>
+              <tr>
+                <th class="time-col" scope="row">20:00 &ndash; 21:30</th>
+                <td>Data Analytics with SQL<br><span class="muted">Evening group</span></td>
+                <td>HTML &amp; CSS Foundations<br><span class="muted">Evening group B</span></td>
+                <td>Data Analytics with SQL<br><span class="muted">Evening group</span></td>
+                <td>HTML &amp; CSS Foundations<br><span class="muted">Evening group B</span></td>
+                <td>Open lecture<br><span class="muted">Free for everyone</span></td>
+                <td class="free-slot">&mdash;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>How to read the timetable</h3>
+        <!-- UNORDERED LIST used as a legend -->
+        <ul class="plain-list">
+          <li><strong>Evening group A / B</strong> — the same course taught twice, pick one slot when you enrol.</li>
+          <li><strong>Self-study</strong> — no live class; the practice task for the week is published instead.</li>
+          <li><strong>Consultations</strong> — open room where any student may join and ask questions.</li>
+          <li><strong>Open lecture</strong> — a guest talk, free to attend even without a subscription.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======================= FORMATS AND RULES ======================= -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="split">
+          <div>
+            <h2>Joining a live class</h2>
+            <h3>Four steps, every single lesson</h3>
+            <ol class="step-list">
+              <li>Open the student portal 10 minutes before the start time.</li>
+              <li>Click the room link on the card of your group.</li>
+              <li>Turn the microphone on when you want to ask something &mdash; interrupting is encouraged.</li>
+              <li>Download the lesson notes and start the practice task the same evening.</li>
+            </ol>
+          </div>
+
+          <div>
+            <h2>Study formats</h2>
+            <h3>Choose the rhythm that fits your week</h3>
+            <div class="table-wrap">
+              <table class="table-striped">
+                <caption>Table 4. Comparison of the three study formats.</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Format</th>
+                    <th scope="col">Classes per week</th>
+                    <th scope="col">Best for</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Evening</td>
+                    <td>2 (18:00 or 20:00)</td>
+                    <td>Students who work or study in the daytime</td>
+                  </tr>
+                  <tr>
+                    <td>Weekend</td>
+                    <td>2 (Saturday)</td>
+                    <td>Busy weekdays, free Saturdays</td>
+                  </tr>
+                  <tr>
+                    <td>Intensive</td>
+                    <td>4 (daytime)</td>
+                    <td>Finishing a course twice as fast</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="note">
+          <h3>Attendance rules</h3>
+          <ul class="check-list">
+            <li>Recordings appear in the portal within two hours after a class.</li>
+            <li>Missing more than four classes in a module means repeating it for free in the next cohort.</li>
+            <li>Practice tasks are accepted until Sunday 23:59 of the same week.</li>
+            <li>Timetable changes are announced in the student chat at least three days ahead.</li>
+          </ul>
+          <p class="muted">
+            Need a different slot? Ask on the <a href="contact.html">contact page</a>
+            &mdash; if five students want the same time, we open a new group.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ SITE FOOTER ========================== -->
+  <footer id="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>EduSphere</h3>
+          <p>
+            A demo educational platform built for Assignment #1 of the
+            Front-End Development course using only hand-written HTML and CSS.
+          </p>
+        </div>
+
+        <div>
+          <h3>The Ethernet — Group SE-2510</h3>
+          <ul class="team-credits">
+            <li>Ramil Zhunussov <span>Home page &amp; Courses catalogue</span></li>
+            <li>Maxim Batyushkin <span>About Us &amp; Instructors pages</span></li>
+            <li>Azamat Mustafin <span>Schedule &amp; Contact pages</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Site map</h3>
+          <ul class="plain-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="instructors.html">Instructors</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="footer-bottom">
+        &copy; 2026 EduSphere · Astana IT University · Created by Ramil Zhunussov,
+        Maxim Batyushkin and Azamat Mustafin.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

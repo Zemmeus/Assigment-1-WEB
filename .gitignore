@@ -1,0 +1,8 @@
+# Assignment brief from the instructor — not part of the website
+*.pdf
+
+# OS / editor noise
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/

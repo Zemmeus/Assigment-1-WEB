@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =====================================================================
+       Project : EduSphere — Online Educational Platform
+       Team    : The Ethernet (Group SE-2510)
+       Members : Ramil Zhunussov, Maxim Batyushkin, Azamat Mustafin
+       Page    : index.html — Home
+       Author  : Ramil Zhunussov
+       Course  : Front-End Development — Assignment #1 (HTML & CSS Basics)
+       Note    : All styling comes from the shared external file css/style.css
+       ===================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EduSphere is a student-built online learning platform with live classes, mentors and project-based courses.">
+  <meta name="author" content="The Ethernet">
+  <title>EduSphere — Learn Online, Build Real Projects</title>
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============================ SITE HEADER ========================== -->
+  <header id="main-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="images/logo.svg" alt="EduSphere logo: a graduation cap inside a circle">
+        <span class="brand-name">
+          EduSphere
+          <span class="brand-tagline">Learn · Practise · Grow</span>
+        </span>
+      </a>
+
+      <nav class="nav-menu">
+        <ul>
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="instructors.html">Instructors</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================== HERO ============================= -->
+    <section id="hero">
+      <div class="container">
+        <div class="hero-text">
+          <span class="badge badge-accent">Assignment #1 · The Ethernet</span>
+          <h1>Study online, finish with a portfolio</h1>
+          <p>
+            EduSphere is a learning platform for students who want more than video
+            lectures. Every course mixes <span class="highlight">live classes</span>,
+            weekly practice tasks and a personal mentor who reviews your code.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="courses.html">Browse courses</a>
+            <a class="btn btn-ghost" href="contact.html">Register now</a>
+          </div>
+
+          <ul class="stats">
+            <li><strong>24</strong><span>Courses in 4 directions</span></li>
+            <li><strong>12</strong><span>Mentors and instructors</span></li>
+            <li><strong>1 800+</strong><span>Students enrolled</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-art">
+          <img src="images/hero-learning.svg" alt="Student studying at a laptop surrounded by floating course cards">
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== WHY EDUSPHERE ======================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head text-center">
+          <h2>Why students choose EduSphere</h2>
+          <p>
+            Three things make the difference between watching a tutorial and
+            actually learning a skill.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card feature-card">
+            <img src="images/icon-live.svg" alt="Play button icon representing live video lessons">
+            <h3>Live classes twice a week</h3>
+            <p>
+              Lessons run in real time, so you can interrupt the instructor and
+              ask questions. Every session is recorded for later revision.
+            </p>
+          </article>
+
+          <article class="card feature-card">
+            <img src="images/icon-mentor.svg" alt="Icon of two people representing personal mentor support">
+            <h3>A mentor for every student</h3>
+            <p>
+              Your mentor reviews homework line by line and holds a one-to-one
+              call each week to plan what you study next.
+            </p>
+          </article>
+
+          <article class="card feature-card">
+            <img src="images/icon-certificate.svg" alt="Certificate icon representing a verified diploma">
+            <h3>Verified certificate</h3>
+            <p>
+              Finish the final project, defend it in front of the group and
+              receive a certificate with a public verification link.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== HOW IT WORKS (OL) ====================== -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="split">
+          <div>
+            <h2>How learning works</h2>
+            <h3>Five steps from sign-up to certificate</h3>
+            <!-- ORDERED LIST: the steps must happen in this exact order -->
+            <ol class="step-list">
+              <li>Create a free account and take the short placement test.</li>
+              <li>Choose a course and a study format — evening, weekend or intensive.</li>
+              <li>Attend live classes and submit the weekly practice task.</li>
+              <li>Get written feedback from your mentor within 24 hours.</li>
+              <li>Build and defend a final project, then collect your certificate.</li>
+            </ol>
+          </div>
+
+          <div>
+            <h2>What is included</h2>
+            <h3>Everything comes with the subscription</h3>
+            <!-- UNORDERED LIST: the order of these features does not matter -->
+            <ul class="check-list">
+              <li>Lifetime access to recorded lessons and lecture notes</li>
+              <li>Weekly code review from a working developer</li>
+              <li>Private student chat with instructors and alumni</li>
+              <li>Interview preparation workshops every month</li>
+              <li>Free retake of any module during the same year</li>
+            </ul>
+
+            <blockquote>
+              &ldquo;I joined to learn HTML and left with three projects in my
+              portfolio and a junior offer.&rdquo; — Aida, graduate of 2025
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= POPULAR COURSES ======================= -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Most popular this semester</h2>
+          <p>
+            A short preview of the catalogue — the full list of 24 courses lives
+            on the <a href="courses.html">Courses page</a>.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card course-card">
+            <img class="thumb" src="images/course-web.svg" alt="Browser window representing the HTML and CSS foundations course">
+            <div class="card-body">
+              <span class="badge">Beginner</span>
+              <h3>HTML &amp; CSS Foundations</h3>
+              <p>Semantic markup, the box model and responsive layouts from zero.</p>
+              <p class="muted">8 weeks · 2 classes per week</p>
+            </div>
+          </article>
+
+          <article class="card course-card">
+            <img class="thumb" src="images/course-js.svg" alt="Code editor showing a JavaScript function">
+            <div class="card-body">
+              <span class="badge">Intermediate</span>
+              <h3>JavaScript in Practice</h3>
+              <p>The DOM, events, fetch requests and a single-page application.</p>
+              <p class="muted">10 weeks · 2 classes per week</p>
+            </div>
+          </article>
+
+          <article class="card course-card">
+            <img class="thumb" src="images/course-data.svg" alt="Dashboard with bar and pie charts representing data analytics">
+            <div class="card-body">
+              <span class="badge">Intermediate</span>
+              <h3>Data Analytics with SQL</h3>
+              <p>Queries, joins, dashboards and telling a story with numbers.</p>
+              <p class="muted">12 weeks · 2 classes per week</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== CTA ============================== -->
+    <section class="section section-alt">
+      <div class="container text-center">
+        <h2>Ready to start?</h2>
+        <p>
+          The next cohort opens on <strong>29 September</strong>. Places in the
+          evening group are limited to 18 students.
+        </p>
+        <div class="hero-actions centered">
+          <a class="btn btn-primary" href="contact.html">Fill in the registration form</a>
+          <a class="btn btn-ghost" href="schedule.html">See the timetable</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ SITE FOOTER ========================== -->
+  <footer id="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>EduSphere</h3>
+          <p>
+            A demo educational platform built for Assignment #1 of the
+            Front-End Development course using only hand-written HTML and CSS.
+          </p>
+        </div>
+
+        <div>
+          <h3>The Ethernet — Group SE-2510</h3>
+          <ul class="team-credits">
+            <li>Ramil Zhunussov <span>Home page &amp; Courses catalogue</span></li>
+            <li>Maxim Batyushkin <span>About Us &amp; Instructors pages</span></li>
+            <li>Azamat Mustafin <span>Schedule &amp; Contact pages</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Site map</h3>
+          <ul class="plain-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="instructors.html">Instructors</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="footer-bottom">
+        &copy; 2026 EduSphere · Astana IT University · Created by Ramil Zhunussov,
+        Maxim Batyushkin and Azamat Mustafin.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

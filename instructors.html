@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =====================================================================
+       Project : EduSphere — Online Educational Platform
+       Team    : The Ethernet (Group SE-2510)
+       Members : Ramil Zhunussov, Maxim Batyushkin, Azamat Mustafin
+       Page    : instructors.html — Teaching staff and office hours
+       Author  : Maxim Batyushkin
+       Course  : Front-End Development — Assignment #1 (HTML & CSS Basics)
+       Note    : All styling comes from the shared external file css/style.css
+       ===================================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet the EduSphere instructors and mentors, see their specialisations, qualifications and weekly office hours.">
+  <meta name="author" content="The Ethernet">
+  <title>Our Instructors — EduSphere</title>
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============================ SITE HEADER ========================== -->
+  <header id="main-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="images/logo.svg" alt="EduSphere logo: a graduation cap inside a circle">
+        <span class="brand-name">
+          EduSphere
+          <span class="brand-tagline">Learn · Practise · Grow</span>
+        </span>
+      </a>
+
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a class="active" href="instructors.html">Instructors</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h1>Meet the instructors</h1>
+          <p>
+            Every course is led by a practising developer or designer who still
+            works in the industry. Classes are small on purpose: one instructor
+            never takes more than eighteen students per group.
+          </p>
+        </div>
+
+        <div class="card-grid">
+
+          <article class="card team-card">
+            <img class="profile-img profile-img-lg" src="images/tutor-1.svg" alt="Portrait of instructor Marat Zhaksybek, front-end developer">
+            <h3>Marat Zhaksybek</h3>
+            <span class="role">Front-end · HTML, CSS, JavaScript</span>
+            <p>
+              Seven years of commercial front-end work, currently a senior
+              developer in a fintech company. Teaches the foundations course the
+              way it should be taught &mdash; markup first, decoration after.
+            </p>
+            <h3>Specialisations</h3>
+            <ul class="check-list">
+              <li>Semantic HTML and accessibility</li>
+              <li>Modern CSS layout: flexbox and grid</li>
+              <li>Vanilla JavaScript and the DOM</li>
+            </ul>
+            <h3>Qualifications</h3>
+            <ol>
+              <li>BSc in Computer Science, Astana IT University</li>
+              <li>Senior Front-End Developer since 2022</li>
+              <li>Speaker at two regional web conferences</li>
+            </ol>
+          </article>
+
+          <article class="card team-card">
+            <img class="profile-img profile-img-lg" src="images/tutor-2.svg" alt="Portrait of instructor Aigerim Baitursyn, data analyst">
+            <h3>Aigerim Baitursyn</h3>
+            <span class="role">Data · SQL, Python, analytics</span>
+            <p>
+              Works as a data analyst in a logistics company and has spent the
+              last four years turning messy spreadsheets into dashboards that
+              managers actually use.
+            </p>
+            <h3>Specialisations</h3>
+            <ul class="check-list">
+              <li>SQL for reporting and analytics</li>
+              <li>Data cleaning with Python and pandas</li>
+              <li>Dashboard design and data storytelling</li>
+            </ul>
+            <h3>Qualifications</h3>
+            <ol>
+              <li>MSc in Applied Mathematics</li>
+              <li>Certified Google Data Analytics professional</li>
+              <li>Four years as a production data analyst</li>
+            </ol>
+          </article>
+
+          <article class="card team-card">
+            <img class="profile-img profile-img-lg" src="images/tutor-3.svg" alt="Portrait of instructor Nurlan Serik, product designer">
+            <h3>Nurlan Serik</h3>
+            <span class="role">Design · UX research, UI systems</span>
+            <p>
+              Product designer in an e-commerce team. Runs the design course
+              around one rule: every screen a student draws must be justified by
+              something a real user said.
+            </p>
+            <h3>Specialisations</h3>
+            <ul class="check-list">
+              <li>User research and usability testing</li>
+              <li>Wireframing and prototyping in Figma</li>
+              <li>Design systems, colour and type scales</li>
+            </ul>
+            <h3>Qualifications</h3>
+            <ol>
+              <li>BA in Graphic Design</li>
+              <li>Six years in product design teams</li>
+              <li>Mentor at two national design hackathons</li>
+            </ol>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== OFFICE HOURS ========================= -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Office hours and contacts</h2>
+          <p>
+            Outside class time every instructor keeps two open consultation slots
+            per week. No appointment is needed &mdash; just join the room link
+            from the student chat.
+          </p>
+        </div>
+
+        <div class="table-wrap">
+          <table id="office-hours" class="table-striped">
+            <caption>Table 2. Weekly consultation slots of the teaching staff (Astana time, UTC+5).</caption>
+            <thead>
+              <tr>
+                <th scope="col">Instructor</th>
+                <th scope="col">Direction</th>
+                <th scope="col">Consultation days</th>
+                <th scope="col">Time</th>
+                <th scope="col">Format</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Marat Zhaksybek</td>
+                <td>Front-end</td>
+                <td>Tuesday, Thursday</td>
+                <td>18:00 &ndash; 19:30</td>
+                <td>Online, video call</td>
+              </tr>
+              <tr>
+                <td>Aigerim Baitursyn</td>
+                <td>Data analytics</td>
+                <td>Wednesday, Friday</td>
+                <td>19:00 &ndash; 20:00</td>
+                <td>Online, video call</td>
+              </tr>
+              <tr>
+                <td>Nurlan Serik</td>
+                <td>UX / UI design</td>
+                <td>Monday, Saturday</td>
+                <td>17:00 &ndash; 18:30</td>
+                <td>Online or campus, room 305</td>
+              </tr>
+              <tr>
+                <td>Mentor team</td>
+                <td>All directions</td>
+                <td>Monday &ndash; Friday</td>
+                <td>10:00 &ndash; 18:00</td>
+                <td>Written code review in chat</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="split">
+          <div class="note">
+            <h3>How code review works</h3>
+            <ol class="step-list">
+              <li>Push your homework to your own GitHub repository.</li>
+              <li>Post the repository link in the group chat thread.</li>
+              <li>A mentor answers with line-by-line comments within 24 hours.</li>
+              <li>Fix the comments and mark the task as done.</li>
+            </ol>
+          </div>
+
+          <div class="note">
+            <h3>Want to teach with us?</h3>
+            <p class="muted">
+              We are always looking for practising developers who enjoy
+              explaining things. Send a short note about your experience through
+              the <a href="contact.html">contact form</a> and choose the topic
+              &ldquo;Becoming an instructor&rdquo;.
+            </p>
+            <ul class="plain-list">
+              <li>At least 3 years of industry experience</li>
+              <li>4&ndash;6 free hours per week</li>
+              <li>Ready to review student code in writing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ SITE FOOTER ========================== -->
+  <footer id="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>EduSphere</h3>
+          <p>
+            A demo educational platform built for Assignment #1 of the
+            Front-End Development course using only hand-written HTML and CSS.
+          </p>
+        </div>
+
+        <div>
+          <h3>The Ethernet — Group SE-2510</h3>
+          <ul class="team-credits">
+            <li>Ramil Zhunussov <span>Home page &amp; Courses catalogue</span></li>
+            <li>Maxim Batyushkin <span>About Us &amp; Instructors pages</span></li>
+            <li>Azamat Mustafin <span>Schedule &amp; Contact pages</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Site map</h3>
+          <ul class="plain-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="instructors.html">Instructors</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="footer-bottom">
+        &copy; 2026 EduSphere · Astana IT University · Created by Ramil Zhunussov,
+        Maxim Batyushkin and Azamat Mustafin.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
